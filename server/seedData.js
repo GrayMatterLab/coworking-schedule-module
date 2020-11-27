@@ -7,7 +7,7 @@ const _ = require("lodash");
 const url = "mongodb://localhost:27017";
 
 //Database Name
-const dbName = "Reservation";
+const dbName = "reservation";
 
 //Use connect method to connect to the server
 MongoClient.connect(url, function (err, client) {
@@ -16,12 +16,12 @@ MongoClient.connect(url, function (err, client) {
   const db = client.db(dbName);
 
   //get access to the relevant collections
-  const reservationCollection = db.collection("reservations");
+  const reservationCollection = db.collection("reservationEntries");
 
   //make a bunch of fake reservations
   let bunchOfReservations = [];
 
-  for (let i = 0; i < 1000000; i++) {
+  for (let i = 0; i < 100; i++) {
 
     const addressBuild = faker.fake("{{address.streetAddress}}, {{address.city}}, {{address.state}}, {{address.zipCode}}");
     const pricePerHour = faker.finance.amount();

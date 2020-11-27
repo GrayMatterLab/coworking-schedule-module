@@ -1,6 +1,6 @@
 //Open connection to the space database on our locally running instance of MongoDB
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/space', { useNewURLParser: true });
+mongoose.connect('mongodb://localhost/27017', { useNewUrlParser: true, useUnifiedTopology: true });
 
 //Notification if database is connected successfully or if a connection error occurs
 const db = mongoose.connection;
@@ -24,6 +24,6 @@ const reservationSchema = new mongoose.Schema(
   }
 )
 
-const Reservation = mongoose.model('Reservation', reservationSchema);
+const reservations = mongoose.model('reservationEntries', reservationSchema);
 
-export default Reservation;
+export default reservation;
