@@ -5,6 +5,7 @@ export const Grid = styled.section`
   width: 415px;
   grid-template-rows: 25px 58px 60px 60px 20px 55px 55px 230px;
   border: 1px solid black;
+  border-radius: 10px;
   display: grid;
 `;
 //560
@@ -31,6 +32,7 @@ export const CheckInContainer = styled.section`
   grid-row-start: 3;
   grid-row-end: 5;
   border: 1px solid black;
+  border-radius: 10px;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
   display: grid;
