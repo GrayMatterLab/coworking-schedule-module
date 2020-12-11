@@ -10,20 +10,24 @@
     "test": "jest --detectOpenHandles",
     "start": "node ./server/index.js",
     "build": "webpack --watch",
-    "seed": "node database/seedData.js"
+    "seed": "node server/seedData.js"
   },
   "dependencies": {
     "axios": "^0.21.0",
+    "babel-loader": "^8.2.2",
     "babel-preset-airbnb": "^5.0.0",
     "body-parser": "^1.19.0",
     "express": "^4.17.1",
     "faker": "^5.1.0",
     "jest": "^26.6.3",
+    "mime-db": "^1.45.0",
     "mongodb": "^3.6.3",
     "mongoose": "^5.10.15",
     "nodemon": "^2.0.6",
     "react": "^17.0.1",
+    "react-dates": "^21.8.0",
     "react-dom": "^17.0.1",
+    "styled-components": "^5.2.1",
     "supertest": "^6.0.1"
   },
   "devDependencies": {
@@ -33,7 +37,7 @@
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.5",
     "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor.git",
-    "webpack": "^5.6.0",
+    "webpack": "^4.44.0",
     "webpack-cli": "^4.2.0"
   },
   "version": "1.0.0",
