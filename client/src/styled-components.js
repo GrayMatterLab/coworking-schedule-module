@@ -24,6 +24,7 @@ export const Rating = styled.section`
   grid-column-end: 4;
   grid-row-start: 2;
   grid-row-end: 3;
+  font-family: "Airbnb Cereal App";
 `;
 
 export const CheckInContainer = styled.section`
@@ -36,7 +37,7 @@ export const CheckInContainer = styled.section`
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
   display: grid;
-
+  font-family: "Airbnb Cereal App";
 `;
 
 export const CheckInDate = styled.section`
@@ -44,7 +45,8 @@ export const CheckInDate = styled.section`
   grid-column-end: 1;
   grid-row-start: 1;
   grid-row-end: 1;
-  border: 1px solid black;
+  border-bottom: 1px solid black;
+  border-right: 1px solid black;
 `;
 
 export const Attendee = styled.section`
@@ -52,7 +54,7 @@ export const Attendee = styled.section`
   grid-column-end: 2;
   grid-row-start: 1;
   grid-row-end: 1;
-  border: 1px solid black;
+  border-bottom: 1px solid black;
 `;
 
 export const TimeIn = styled.section`
@@ -60,7 +62,7 @@ export const TimeIn = styled.section`
   grid-column-end: 1;
   grid-row-start: 2;
   grid-row-end: 2;
-  border: 1px solid black;
+  border-right: 1px solid black;
 `;
 
 export const TimeOut = styled.section`
@@ -68,7 +70,6 @@ export const TimeOut = styled.section`
   grid-column-end: 2;
   grid-row-start: 2;
   grid-row-end: 2;
-  border: 1px solid black;
 `;
 
 export const ReserveButton = styled.section`
