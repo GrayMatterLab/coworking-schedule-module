@@ -21,7 +21,7 @@ class App extends React.Component {
           $̶2̶2̶9̶ $129 / night
         </s.PricePerNight>
         <s.Rating>
-          Rating
+          Ratings
         </s.Rating>
         <s.CheckInContainer>
           <s.CheckInDate>
@@ -39,7 +39,7 @@ class App extends React.Component {
 
         </s.CheckInContainer>
         <s.ReserveButton>
-          Reserve
+          Book It Now
         </s.ReserveButton>
         <s.ChargeCaption>
           You won't be charged yet
@@ -63,14 +63,14 @@ class App extends React.Component {
           <s.OccupancyTaxQuote>
             $14
           </s.OccupancyTaxQuote>
-          <s.Line>
-            Line
-          </s.Line>
+          <s.AdditionalFees>
+            NYC COVID Surcharge
+          </s.AdditionalFees>
           <s.Total>
             Total
         </s.Total>
           <s.TotalQuote>
-            $1412
+            $14121231231
         </s.TotalQuote>
         </s.CostBreakdown>
       </s.Grid >
