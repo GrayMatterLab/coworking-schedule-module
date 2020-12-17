@@ -4,7 +4,8 @@ export const Grid = styled.section`
   grid-template-columns: 20px 187.5px 187.5px 20px;
   width: 415px;
   grid-template-rows: 25px 58px 60px 60px 20px 55px 55px 230px;
-  border: 1px solid black;
+  border: 1px solid #dedede;
+  box-shadow: 0px 5px 5px 4px #dedede;
   border-radius: 10px;
   display: grid;
 `;
@@ -32,7 +33,7 @@ export const CheckInContainer = styled.section`
   grid-column-end: 4;
   grid-row-start: 3;
   grid-row-end: 5;
-  border: 1px solid black;
+  border: 1px solid #b0b0b0;
   border-radius: 10px;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
@@ -45,8 +46,8 @@ export const CheckInDate = styled.section`
   grid-column-end: 1;
   grid-row-start: 1;
   grid-row-end: 1;
-  border-bottom: 1px solid black;
-  border-right: 1px solid black;
+  border-bottom: 1px solid #b0b0b0;
+  border-right: 1px solid #b0b0b0;
 `;
 
 export const Attendee = styled.section`
@@ -54,7 +55,7 @@ export const Attendee = styled.section`
   grid-column-end: 2;
   grid-row-start: 1;
   grid-row-end: 1;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid #b0b0b0;
 `;
 
 export const TimeIn = styled.section`
@@ -62,7 +63,7 @@ export const TimeIn = styled.section`
   grid-column-end: 1;
   grid-row-start: 2;
   grid-row-end: 2;
-  border-right: 1px solid black;
+  border-right: 1px solid #b0b0b0;
 `;
 
 export const TimeOut = styled.section`
