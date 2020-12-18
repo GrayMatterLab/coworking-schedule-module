@@ -5,7 +5,7 @@ export const Grid = styled.section`
   width: 415px;
   grid-template-rows: 25px 58px 60px 60px 20px 55px 55px 230px;
   border: 1px solid #dedede;
-  box-shadow: 0px 5px 5px 4px #dedede;
+  box-shadow: 0px 10px 25px 4px #dedede;
   border-radius: 10px;
   display: grid;
 `;
