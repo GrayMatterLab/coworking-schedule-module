@@ -32,11 +32,26 @@ class App extends React.Component {
           </s.Attendee>
           <s.TimeIn>
             Time In
+            <s.SelectBox>
+              <s.OptionsContainer>
+                <s.Option>
+                  <input type='radio' class='radio' id='news' name='time' />
+                  <label for='news'>News & Politics</label>
+                </s.Option>
+                <s.Option>
+                  <input type='radio' class='radio' id='news' name='time' />
+                  <label for='news'>News & Politics</label>
+                </s.Option>
+                <s.Option>
+                  <input type='radio' class='radio' id='news' name='time' />
+                  <label for='news'>News & Politics</label>
+                </s.Option>
+              </s.OptionsContainer>
+            </s.SelectBox>
           </s.TimeIn>
           <s.TimeOut>
             Time Out
           </s.TimeOut>
-
         </s.CheckInContainer>
         <s.ReserveButton>
           Book It Now
