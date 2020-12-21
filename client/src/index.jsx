@@ -11,7 +11,7 @@ class App extends React.Component {
     }
   }
 
-  //test this commit
+  //test
 
 
   render() {
@@ -21,7 +21,7 @@ class App extends React.Component {
           $̶2̶2̶9̶ $129 / night
         </s.PricePerNight>
         <s.Rating>
-          Rating
+          Ratings
         </s.Rating>
         <s.CheckInContainer>
           <s.CheckInDate>
@@ -32,14 +32,29 @@ class App extends React.Component {
           </s.Attendee>
           <s.TimeIn>
             Time In
+            <s.SelectBox>
+              <s.OptionsContainer>
+                <s.Option>
+                  <input type='radio' class='radio' id='news' name='time' />
+                  <label for='news'>News & Politics</label>
+                </s.Option>
+                <s.Option>
+                  <input type='radio' class='radio' id='news' name='time' />
+                  <label for='news'>News & Politics</label>
+                </s.Option>
+                <s.Option>
+                  <input type='radio' class='radio' id='news' name='time' />
+                  <label for='news'>News & Politics</label>
+                </s.Option>
+              </s.OptionsContainer>
+            </s.SelectBox>
           </s.TimeIn>
           <s.TimeOut>
             Time Out
           </s.TimeOut>
-
         </s.CheckInContainer>
         <s.ReserveButton>
-          Reserve
+          Book It Now
         </s.ReserveButton>
         <s.ChargeCaption>
           You won't be charged yet
@@ -63,14 +78,14 @@ class App extends React.Component {
           <s.OccupancyTaxQuote>
             $14
           </s.OccupancyTaxQuote>
-          <s.Line>
-            Line
-          </s.Line>
+          <s.AdditionalFees>
+            NYC COVID Surcharge
+          </s.AdditionalFees>
           <s.Total>
             Total
         </s.Total>
           <s.TotalQuote>
-            $1412
+            $14121231231
         </s.TotalQuote>
         </s.CostBreakdown>
       </s.Grid >
