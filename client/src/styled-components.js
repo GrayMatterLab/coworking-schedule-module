@@ -64,45 +64,7 @@ export const TimeIn = styled.section`
   grid-row-start: 2;
   grid-row-end: 2;
   border-right: 1px solid #b0b0b0;
-  // overflow: hidden;
-`;
-
-export const SelectBox = styled.section`
-  display: flex;
-  padding: 32px;
-  background: #2f3640;
-  color: #ffffff;
-  max-height: 0;
-  width: 100%;
-  opacity: 0;
-  transition: all 0.4s
-  overflow: hidden;
-  &:active {
-    max-height: 200px;
-    opacity: 1;
-    overflow-y: scroll;
-  }
-  &:label {
-    cursor: pointer;
-  }
-`;
-
-export const OptionsContainer = styled.section`
-  padding: 12px 24px;
-  cursor: pointer;
-  &:active {
-    max-height: 200px;
-    opacity: 1;
-    overflow-y: scroll;
-  }
-`;
-
-export const Option = styled.section`
-  padding: 12px 24px;
-  cursor: pointer;
-  &:hover {
-    background: green;
-  }
+  // overflow: auto;
 `;
 
 export const TimeOut = styled.section`
