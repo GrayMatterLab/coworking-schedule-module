@@ -8,6 +8,8 @@ export const Grid = styled.section`
   box-shadow: 0px 10px 25px 4px #dedede;
   border-radius: 10px;
   display: grid;
+  margin: auto;
+  margin-top: 50px;
 `;
 
 export const PricePerNight = styled.section`
@@ -64,7 +66,7 @@ export const TimeIn = styled.section`
   grid-row-start: 2;
   grid-row-end: 2;
   border-right: 1px solid #b0b0b0;
-  // overflow: auto;
+  overflow-y: visible;
 `;
 
 export const TimeOut = styled.section`
@@ -86,7 +88,10 @@ export const ReserveButton = styled.section`
   text-align: center;
   color: white;
   padding-top: 17px;
-  padding-bottom: 20px
+  padding-bottom: 20px;
+  &:hover{
+    background: #e44e7e;
+  }
 `;
 
 export const ChargeCaption = styled.section`
