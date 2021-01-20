@@ -72,7 +72,7 @@ export const ReserveButton = styled.section`
   grid-row-start: 6;
   grid-row-end: 7;
   border-radius: 10px;
-  background-color: #e41c5c;
+  background-color: #FF5A5F;
   font-family: "Airbnb Cereal App";
   font-weight: medium;
   text-align: center;

@@ -1,12 +1,12 @@
 
-
+/* CHECK IN TIME */
 .select-box {
   display: flex;
   flex-direction: column;
 }
 
 .select-box .options-container {
-  background: #e41c5c;
+  background: #FF5A5F;
   color: #f5f6fa;
   max-height: 0;
   width: 100%;
@@ -18,7 +18,7 @@
 }
 
 .selected {
-  background: #e41c5b;
+  background: #FF5A5F;
   margin-bottom: 8px;
   color: #f5f6fa;
   position: relative;
@@ -70,7 +70,7 @@
 }
 
 .select-box .option:hover {
-  background:#e44e7e;
+  background:#ff363c;
 }
 
 .select-box .label {
@@ -83,14 +83,14 @@
 
 
   
-
+/* CHECK OUT TIME */
 .select-boxq {
   display: flex;
   flex-direction: column;
 }
 
 .select-boxq .options-containerq {
-  background: #e41c5c;
+  background: #FF5A5F;
   color: #f5f6fa;
   max-height: 0;
   width: 100%;
@@ -102,7 +102,7 @@
 }
 
 .selectedq {
-  background: #e41c5b;
+  background: #FF5A5F;
   margin-bottom: 8px;
   color: #f5f6fa;
   position: relative;
@@ -154,7 +154,7 @@
 }
 
 .select-boxq .optionq:hover {
-  background:#e44e7e;
+  background:#ff363c;
 }
 
 .select-boxq .label {
@@ -166,3 +166,20 @@
 }
 
   
+
+/* CALENDAR COMPONENTS */
+.banner_search{
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.banner_searchButton{
+  background-color: white !important;
+  font-weight: 900 !important;
+  text-transform: inherit !important;
+  color: #ff7779 !important;
+  width: 100%;
+  /* height: 58px; */
+  margin-top: 10px;
+}
