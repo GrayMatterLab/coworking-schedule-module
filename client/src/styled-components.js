@@ -3,11 +3,13 @@ import styled from 'styled-components';
 export const Grid = styled.section`
   grid-template-columns: 20px 187.5px 187.5px 20px;
   width: 415px;
-  grid-template-rows: 25px 58px 60px 60px 20px 55px 55px 230px;
+  grid-template-rows: 25px 58px 300px 60px 20px 55px 55px 230px;
   border: 1px solid #dedede;
   box-shadow: 0px 10px 25px 4px #dedede;
   border-radius: 10px;
   display: grid;
+  margin: auto;
+  margin-top: 50px;
 `;
 
 export const PricePerNight = styled.section`
@@ -36,80 +38,32 @@ export const CheckInContainer = styled.section`
   border: 1px solid #b0b0b0;
   border-radius: 10px;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
   display: grid;
   font-family: "Airbnb Cereal App";
 `;
 
 export const CheckInDate = styled.section`
   grid-column-start: 1;
-  grid-column-end: 1;
+  grid-column-end: two;
   grid-row-start: 1;
   grid-row-end: 1;
-  border-bottom: 1px solid #b0b0b0;
-  border-right: 1px solid #b0b0b0;
 `;
 
-export const Attendee = styled.section`
-  grid-column-start: 2;
-  grid-column-end: 2;
-  grid-row-start: 1;
-  grid-row-end: 1;
-  border-bottom: 1px solid #b0b0b0;
-`;
 
 export const TimeIn = styled.section`
   grid-column-start: 1;
   grid-column-end: 1;
-  grid-row-start: 2;
-  grid-row-end: 2;
-  border-right: 1px solid #b0b0b0;
-  // overflow: hidden;
-`;
-
-export const SelectBox = styled.section`
-  display: flex;
-  padding: 32px;
-  background: #2f3640;
-  color: #ffffff;
-  max-height: 0;
-  width: 100%;
-  opacity: 0;
-  transition: all 0.4s
-  overflow: hidden;
-  &:active {
-    max-height: 200px;
-    opacity: 1;
-    overflow-y: scroll;
-  }
-  &:label {
-    cursor: pointer;
-  }
-`;
-
-export const OptionsContainer = styled.section`
-  padding: 12px 24px;
-  cursor: pointer;
-  &:active {
-    max-height: 200px;
-    opacity: 1;
-    overflow-y: scroll;
-  }
-`;
-
-export const Option = styled.section`
-  padding: 12px 24px;
-  cursor: pointer;
-  &:hover {
-    background: green;
-  }
+  grid-row-start: 4;
+  grid-row-end: 4;
+  overflow-y: visible;
 `;
 
 export const TimeOut = styled.section`
   grid-column-start: 2;
   grid-column-end: 2;
-  grid-row-start: 2;
-  grid-row-end: 2;
+  grid-row-start: 4;
+  grid-row-end: 4;
 `;
 
 export const ReserveButton = styled.section`
@@ -118,13 +72,16 @@ export const ReserveButton = styled.section`
   grid-row-start: 6;
   grid-row-end: 7;
   border-radius: 10px;
-  background-color: #e41c5c;
+  background-color: #FF5A5F;
   font-family: "Airbnb Cereal App";
   font-weight: medium;
   text-align: center;
   color: white;
   padding-top: 17px;
-  padding-bottom: 20px
+  padding-bottom: 20px;
+  &:hover{
+    background: #e44e7e;
+  }
 `;
 
 export const ChargeCaption = styled.section`
