@@ -57,11 +57,6 @@ function App(){
         </s.Rating>
         <s.CheckInContainer>
           <s.CheckInDate>
-            {/* <div classname="banner_search">
-              {showSearch && <Search />}
-              <button onClick={()=> setShowSearch(!showSearch)} 
-              class='banner_searchButton' variant='outlined'>Search Dates</button>
-            </div> */}
             <Search />
           </s.CheckInDate>
           <s.TimeIn>
