@@ -72,7 +72,7 @@ export const ReserveButton = styled.section`
   grid-row-start: 6;
   grid-row-end: 7;
   border-radius: 10px;
-  background-color: #FF5A5F;
+  background-color: #477a7a;
   font-family: "Airbnb Cereal App";
   font-weight: medium;
   text-align: center;
@@ -80,7 +80,7 @@ export const ReserveButton = styled.section`
   padding-top: 17px;
   padding-bottom: 20px;
   &:hover{
-    background: #e44e7e;
+    background: #4f8c8c;
   }
 `;
 
