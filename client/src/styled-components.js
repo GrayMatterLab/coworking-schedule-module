@@ -48,6 +48,7 @@ export const CheckInDate = styled.section`
   grid-column-end: two;
   grid-row-start: 1;
   grid-row-end: 1;
+  text-align: center;
 `;
 
 
