@@ -59,7 +59,7 @@
 }
 
 .select-box .options-container::-webkit-scrollbar-thumb {
-  background: #e41c5c;
+  background: #477a7a;
   border-radius: 0 8px 8px 0;
 }
 
@@ -70,7 +70,7 @@
 }
 
 .select-box .option:hover {
-  background:#ff363c;
+  background:#5ba6a6;
 }
 
 .select-box .label {
@@ -143,7 +143,7 @@
 }
 
 .select-boxq .options-containerq::-webkit-scrollbar-thumb {
-  background: #e41c5c;
+  background: #477a7a;
   border-radius: 0 8px 8px 0;
 }
 
@@ -154,7 +154,7 @@
 }
 
 .select-boxq .optionq:hover {
-  background:#ff363c ;
+  background:#5ba6a6 ;
 }
 
 .select-boxq .label {
