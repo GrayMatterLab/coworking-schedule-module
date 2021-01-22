@@ -54,7 +54,7 @@
 
 .select-box .options-container::-webkit-scrollbar {
   width: 8px;
-  background: #851337;
+  background: #477a7a;
   border-radius: 0 8px 8px 0;
 }
 
@@ -138,7 +138,7 @@
 
 .select-boxq .options-containerq::-webkit-scrollbar {
   width: 8px;
-  background: #851337;
+  background: #477a7a;
   border-radius: 0 8px 8px 0;
 }
 
