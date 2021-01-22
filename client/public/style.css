@@ -6,7 +6,7 @@
 }
 
 .select-box .options-container {
-  background: #FF5A5F;
+  background: #4f8c8c;
   color: #f5f6fa;
   max-height: 0;
   width: 100%;
@@ -18,7 +18,7 @@
 }
 
 .selected {
-  background: #FF5A5F;
+  background: #4f8c8c;
   margin-bottom: 8px;
   color: #f5f6fa;
   position: relative;
@@ -90,7 +90,7 @@
 }
 
 .select-boxq .options-containerq {
-  background: #FF5A5F;
+  background: #4f8c8c;
   color: #f5f6fa;
   max-height: 0;
   width: 100%;
@@ -102,7 +102,7 @@
 }
 
 .selectedq {
-  background: #FF5A5F;
+  background: #4f8c8c;
   margin-bottom: 8px;
   color: #f5f6fa;
   position: relative;
@@ -154,7 +154,7 @@
 }
 
 .select-boxq .optionq:hover {
-  background:#ff363c;
+  background:#ff363c ;
 }
 
 .select-boxq .label {
