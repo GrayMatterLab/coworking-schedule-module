@@ -1,8 +1,10 @@
 import React, {useState} from 'react';
 import ReactDOM from 'react-dom';
 import axios from 'axios';
-import * as s from './styled-components.js';
+import * as s from '../public/styled-components.js';
 import Search from './Search.js';
+import TimeIn from './TimeIn.js';
+import TimeOut from '/TimeOut.js';
 
 
 function App(){
@@ -49,42 +51,12 @@ function App(){
     
     return (
       <s.Grid>
-        <s.PricePerNight>
-          $̶2̶2̶9̶ $129 / night
-        </s.PricePerNight>
-        <s.Rating>
-          Ratings
-        </s.Rating>
+        <s.PricePerNight>$̶2̶2̶9̶ $129 / night</s.PricePerNight>
+        <s.Rating>Ratings</s.Rating>
         <s.CheckInContainer>
-          <s.CheckInDate>
-            <Search />
-          </s.CheckInDate>
-          <s.TimeIn>
-          <div class="select-box">
-            <div class="options-container">
-              <div class="option">
-                <input type="radio" class="radio" />
-                <label for="film">Film & Animation</label>
-              </div>
-            </div>
-            <div class="selected">
-              Check In
-            </div>
-          </div>
-          </s.TimeIn>
-          <s.TimeOut>
-          <div class="select-boxq">
-            <div class="options-containerq">
-              <div class="optionq">
-                <input type="radio" class="radioq" />
-                <label for="film">9:00 AM</label>
-              </div>
-            </div>
-            <div class="selectedq">
-              Check Out
-            </div>
-        </div>
-          </s.TimeOut>
+          <s.CheckInDate><Search/></s.CheckInDate>
+          <s.TimeIn><TimeIn/></s.TimeIn>
+          <s.TimeOut><TimeOut/></s.TimeOut>
         </s.CheckInContainer>
         <s.ReserveButton>
           Reserve
