@@ -36,7 +36,6 @@ export const CheckInContainer = styled.section`
   grid-row-start: 3;
   grid-row-end: 5;
   grid-template-columns: 1fr 1fr;
-  grid-column-gap: 5px;
   grid-template-rows: 1fr 1fr 1fr 1fr;
   display: grid;
   font-family: "Airbnb Cereal App";
@@ -57,6 +56,7 @@ export const TimeIn = styled.section`
   grid-column-end: 1;
   grid-row-start: 4;
   grid-row-end: 4;
+  padding: 2px;
 `;
 
 export const TimeOut = styled.section`
@@ -64,6 +64,7 @@ export const TimeOut = styled.section`
   grid-column-end: 2;
   grid-row-start: 4;
   grid-row-end: 4;
+  padding: 2px;
 `;
 
 export const ReserveButton = styled.section`
