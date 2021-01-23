@@ -6,7 +6,7 @@ export const Grid = styled.section`
   grid-template-rows: 25px 40px 300px 60px 100px 55px 55px 230px;
   border: 1px solid #dedede;
   box-shadow: 0px 10px 25px 4px #dedede;
-  border-radius: 10px;
+  border-radius: 13px;
   display: grid;
   margin: auto;
   margin-top: 50px;
