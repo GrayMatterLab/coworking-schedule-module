@@ -6,7 +6,7 @@
 }
 
 .select-box .options-container {
-  background: #FF5A5F;
+  background: #4f8c8c;
   color: #f5f6fa;
   max-height: 0;
   width: 100%;
@@ -18,12 +18,12 @@
 }
 
 .selected {
-  background: #FF5A5F;
+  background: #4f8c8c;
   margin-bottom: 8px;
   color: #f5f6fa;
   position: relative;
-  
   order: 0;
+  border-radius: 6px;
 }
 
 .selected::after {
@@ -54,12 +54,12 @@
 
 .select-box .options-container::-webkit-scrollbar {
   width: 8px;
-  background: #851337;
+  background: #477a7a;
   border-radius: 0 8px 8px 0;
 }
 
 .select-box .options-container::-webkit-scrollbar-thumb {
-  background: #e41c5c;
+  background: #477a7a;
   border-radius: 0 8px 8px 0;
 }
 
@@ -70,7 +70,7 @@
 }
 
 .select-box .option:hover {
-  background:#ff363c;
+  background:#94acac;
 }
 
 .select-box .label {
@@ -90,7 +90,7 @@
 }
 
 .select-boxq .options-containerq {
-  background: #FF5A5F;
+  background: #4f8c8c;
   color: #f5f6fa;
   max-height: 0;
   width: 100%;
@@ -102,11 +102,11 @@
 }
 
 .selectedq {
-  background: #FF5A5F;
+  background: #4f8c8c;
   margin-bottom: 8px;
   color: #f5f6fa;
   position: relative;
-  
+  border-radius: 6px;
   order: 0;
 }
 
@@ -138,12 +138,12 @@
 
 .select-boxq .options-containerq::-webkit-scrollbar {
   width: 8px;
-  background: #851337;
+  background: #477a7a;
   border-radius: 0 8px 8px 0;
 }
 
 .select-boxq .options-containerq::-webkit-scrollbar-thumb {
-  background: #e41c5c;
+  background: #477a7a;
   border-radius: 0 8px 8px 0;
 }
 
@@ -154,7 +154,7 @@
 }
 
 .select-boxq .optionq:hover {
-  background:#ff363c;
+  background:#94acac ;
 }
 
 .select-boxq .label {
