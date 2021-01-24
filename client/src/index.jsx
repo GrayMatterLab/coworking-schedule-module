@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import ReactDOM from 'react-dom';
 import * as s from '../public/styled-components.js';
+import axios from 'axios';
 import Search from './Search.js';
 import TimeIn from './TimeIn.js';
 import TimeOut from './TimeOut.js';
@@ -8,8 +9,25 @@ import ToggleAction from './ToggleAction.js';
 
 class App extends React.Component{
 
+  state = {
+    locations: []
+  };
+
   componentDidMount(){
     ToggleAction();
+    this.fetchSpace();
+  }
+
+  fetchSpace = () => {
+    axios.get('/api/reservation')
+      .then(() => {
+        const data = data.response;
+        this.setState({locations: data})
+        console.log('Data received');
+      })
+      .catch(() => {
+        console.log('Error with data received');
+      })
   }
 
   render(){
