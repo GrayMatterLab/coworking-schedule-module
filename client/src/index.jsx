@@ -1,10 +1,9 @@
 import React, {useState} from 'react';
 import ReactDOM from 'react-dom';
-import axios from 'axios';
 import * as s from '../public/styled-components.js';
 import Search from './Search.js';
 import TimeIn from './TimeIn.js';
-import TimeOut from '/TimeOut.js';
+import TimeOut from './TimeOut.js';
 
 
 function App(){
