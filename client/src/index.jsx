@@ -10,7 +10,11 @@ import ToggleAction from './ToggleAction.js';
 class App extends React.Component{
 
   state = {
-    locations: []
+    locations: [],
+    pricePerNight: [],
+    cleaningFee: [],
+    covidSurcharge: [],
+    occupTaxNFee: []
   };
 
   componentDidMount(){
@@ -20,20 +24,27 @@ class App extends React.Component{
 
   fetchSpace = () => {
     axios.get('/api/reservation')
-      .then(() => {
-        const data = data.response;
-        this.setState({locations: data})
+      .then((response) => {
+        const res = response.data[0]
+        this.setState({
+          locations: res.location, 
+          pricePerNight: res.pricePerNight, 
+          cleaningFee: res.cleaningFee, 
+          covidSurcharge: res.covidSurcharge,
+          occupTaxNFee: 19+Number(Math.round(res.pricePerNight+'e2')+'e-2')
+        })
         console.log('Data received');
+        console.log(this.state);
       })
       .catch(() => {
-        console.log('Error with data received');
+        console.log('Error with data in fetchSpace()');
       })
   }
 
   render(){
     return (
         <s.Grid>
-          <s.PricePerNight>$̶2̶2̶9̶ $129 / night</s.PricePerNight>
+          <s.PricePerNight>${this.state.pricePerNight} / night</s.PricePerNight>
           <s.Rating>Ratings</s.Rating>
           <s.CheckInContainer>
             <s.CheckInDate><Search/></s.CheckInDate>
@@ -48,31 +59,34 @@ class App extends React.Component{
           </s.ChargeCaption>
           <s.CostBreakdown>
             <s.PerNightCaption>
-              $107 x 1 night
+              ${this.state.pricePerNight} x 1 night
             </s.PerNightCaption>
             <s.PerNightQuote>
-              $107
+              ${this.state.pricePerNight}
             </s.PerNightQuote>
             <s.CleaningFeeCaption>
               Cleaning fee
             </s.CleaningFeeCaption>
             <s.CleaningFeeQuote>
-              $35
+              ${this.state.covidSurcharge}
             </s.CleaningFeeQuote>
             <s.OccupancyTaxCaption>
-              Occupancy taxes and fees
+              Occupancy fee and taxes
             </s.OccupancyTaxCaption>
             <s.OccupancyTaxQuote>
-              $14
+              ${this.state.occupTaxNFee}
             </s.OccupancyTaxQuote>
             <s.AdditionalFees>
               NYC COVID Surcharge
             </s.AdditionalFees>
+            <s.AdditionalFeesQuote>
+              ${this.state.covidSurcharge}
+            </s.AdditionalFeesQuote>
             <s.Total>
               Total
           </s.Total>
             <s.TotalQuote>
-              $14121231231
+              ${this.state.pricePerNight + this.state.cleaningFee + this.state.covidSurcharge + this.state.covidSurcharge}
           </s.TotalQuote>
           </s.CostBreakdown>
         </s.Grid >
