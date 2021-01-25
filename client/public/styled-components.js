@@ -173,6 +173,16 @@ export const AdditionalFees = styled.section`
   text-decoration: underline;
 `;
 
+export const AdditionalFeesQuote = styled.section`
+  grid-column-start: 3;
+  grid-column-end: three;
+  grid-row-start: 4;
+  grid-row-end: 4;
+  border-bottom: 1px solid #dedede;
+  font-family: "Airbnb Cereal App";
+  text-align: right;
+`;
+
 export const Total = styled.section`
   grid-column-start: 1;
   grid-column-end: two;
