@@ -24,21 +24,15 @@ MongoClient.connect(url, function (err, client) {
   for (let i = 0; i < 100; i++) {
 
     const addressBuild = faker.fake("{{address.streetAddress}}, {{address.city}}, {{address.state}}, {{address.zipCode}}");
-    const pricePerHour = faker.finance.amount();
-    const reserveDate = faker.date.future();
-    const checkInTime = faker.time.recent();
-    const checkOutTime = faker.time.recent();
-    const numberOfGuests = faker.random.number();
-    const occupancyTaxesAndFees = faker.finance.amount();
+    const pricePerNight = faker.random.number({'min': 85, 'max': 154});
+    const cleaningFee = 99;
+    const covidSurcharge = 29;
 
     const newReservation = {
       location: addressBuild,
-      pricePerHour: pricePerHour,
-      reserveDate: reserveDate,
-      checkInTime: checkInTime,
-      checkOutTime: checkOutTime,
-      numberOfGuests: numberOfGuests,
-      occupancyTaxesAndFees: occupancyTaxesAndFees
+      pricePerNight: pricePerNight,
+      cleaningFee: cleaningFee,
+      covidSurcharge: covidSurcharge
     }
     bunchOfReservations.push(newReservation);
   }
