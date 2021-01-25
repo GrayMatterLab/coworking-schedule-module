@@ -51,43 +51,19 @@ class App extends React.Component{
             <s.TimeIn><TimeIn/></s.TimeIn>
             <s.TimeOut><TimeOut/></s.TimeOut>
           </s.CheckInContainer>
-          <s.ReserveButton>
-            Reserve
-          </s.ReserveButton>
-          <s.ChargeCaption>
-            You won't be charged yet
-          </s.ChargeCaption>
+          <s.ReserveButton>Reserve</s.ReserveButton>
+          <s.ChargeCaption>You won't be charged yet</s.ChargeCaption>
           <s.CostBreakdown>
-            <s.PerNightCaption>
-              ${this.state.pricePerNight} x 1 night
-            </s.PerNightCaption>
-            <s.PerNightQuote>
-              ${this.state.pricePerNight}
-            </s.PerNightQuote>
-            <s.CleaningFeeCaption>
-              Cleaning fee
-            </s.CleaningFeeCaption>
-            <s.CleaningFeeQuote>
-              ${this.state.covidSurcharge}
-            </s.CleaningFeeQuote>
-            <s.OccupancyTaxCaption>
-              Occupancy fee and taxes
-            </s.OccupancyTaxCaption>
-            <s.OccupancyTaxQuote>
-              ${this.state.occupTaxNFee}
-            </s.OccupancyTaxQuote>
-            <s.AdditionalFees>
-              NYC COVID Surcharge
-            </s.AdditionalFees>
-            <s.AdditionalFeesQuote>
-              ${this.state.covidSurcharge}
-            </s.AdditionalFeesQuote>
-            <s.Total>
-              Total
-          </s.Total>
-            <s.TotalQuote>
-              ${this.state.pricePerNight + this.state.cleaningFee + this.state.occupTaxNFee + this.state.covidSurcharge}
-          </s.TotalQuote>
+            <s.PerNightCaption>{this.state.pricePerNight} x 1 night</s.PerNightCaption>
+            <s.PerNightQuote>${this.state.pricePerNight}</s.PerNightQuote>
+            <s.CleaningFeeCaption>Cleaning fee</s.CleaningFeeCaption>
+            <s.CleaningFeeQuote>${this.state.covidSurcharge}</s.CleaningFeeQuote>
+            <s.OccupancyTaxCaption>Occupancy fee and taxes</s.OccupancyTaxCaption>
+            <s.OccupancyTaxQuote>${this.state.occupTaxNFee}</s.OccupancyTaxQuote>
+            <s.AdditionalFees>NYC COVID Surcharge</s.AdditionalFees>
+            <s.AdditionalFeesQuote>${this.state.covidSurcharge}</s.AdditionalFeesQuote>
+            <s.Total>Total</s.Total>
+            <s.TotalQuote>${this.state.pricePerNight + this.state.cleaningFee + this.state.occupTaxNFee + this.state.covidSurcharge}</s.TotalQuote>
           </s.CostBreakdown>
         </s.Grid >
       )
