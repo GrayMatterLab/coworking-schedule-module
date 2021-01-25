@@ -86,7 +86,7 @@ class App extends React.Component{
               Total
           </s.Total>
             <s.TotalQuote>
-              ${this.state.pricePerNight + this.state.cleaningFee + this.state.covidSurcharge + this.state.covidSurcharge}
+              ${this.state.pricePerNight + this.state.cleaningFee + this.state.occupTaxNFee + this.state.covidSurcharge}
           </s.TotalQuote>
           </s.CostBreakdown>
         </s.Grid >
