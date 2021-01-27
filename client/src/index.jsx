@@ -9,13 +9,19 @@ import ToggleAction from './ToggleAction.js';
 
 class App extends React.Component{
 
-  state = {
-    locations: [],
-    pricePerNight: [],
-    cleaningFee: [],
-    covidSurcharge: [],
-    occupTaxNFee: []
-  };
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      locations: [],
+      pricePerNight: [],
+      cleaningFee: [],
+      covidSurcharge: [],
+      occupTaxNFee: [],
+      timeIn: [],
+      timeOut: []
+    };
+  }
 
   componentDidMount(){
     ToggleAction();
