@@ -13,8 +13,10 @@ function ToggleAction(){
       
         optionsList.forEach(o => {
           o.addEventListener("click", () => {
-            console.log('Time In dropdown was triggered')
+            console.log('An option in Checkin Time was selected')
             selected.innerHTML = o.querySelector("label").innerHTML;
+            console.log(selected.innerHTML);
+            const TimeIn = selected.innerHTML;
             optionsContainer.classList.remove("active");
           });
         });
@@ -31,12 +33,14 @@ function ToggleAction(){
       
         optionsListq.forEach(e => {
           e.addEventListener("click", () => {
-            console.log('Time Out dropdown was triggered')
+            console.log('An option in Checkout Time was selected');
             selectedq.innerHTML = e.querySelector("label").innerHTML;
+            console.log(selectedq.innerHTML);
+            const TimeOut = selectedq.innerHTML;
             optionsContainerq.classList.remove("active");
           });
         });    
     }
 }
 
-export default ToggleAction;
+export default ToggleAction; 
