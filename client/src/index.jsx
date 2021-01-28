@@ -5,7 +5,7 @@ import axios from 'axios';
 import Search from './Search.js';
 import TimeIn from './TimeIn.js';
 import TimeOut from './TimeOut.js';
-import ToggleAction from './ToggleAction.js';
+import {ToggleAction, timeIn, timeOut} from './ToggleAction.js';
 
 class App extends React.Component{
 
@@ -18,14 +18,15 @@ class App extends React.Component{
       cleaningFee: [],
       covidSurcharge: [],
       occupTaxNFee: [],
-      timeIn: [],
-      timeOut: []
+      timeInSel: timeIn,
+      timeOutSel: timeOut
     };
   }
 
   componentDidMount(){
     ToggleAction();
     this.fetchSpace();
+    console.log(this.state.timeIn)
   }
 
   fetchSpace = () => {
@@ -40,11 +41,17 @@ class App extends React.Component{
           occupTaxNFee: 19+Number(Math.round(res.pricePerNight+'e2')+'e-2')
         })
         console.log('Data received');
-        console.log(this.state);
+        // console.log(this.state);
       })
       .catch(() => {
         console.log('Error with data in fetchSpace()');
       })
+  }
+
+  reserveFunc = () => {
+    this.setState({timeInSel: timeIn, timeOutSel: timeOut});
+    console.log(timeIn, timeOut);
+    console.log(this.state);
   }
 
   render(){
@@ -57,7 +64,7 @@ class App extends React.Component{
             <s.TimeIn><TimeIn/></s.TimeIn>
             <s.TimeOut><TimeOut/></s.TimeOut>
           </s.CheckInContainer>
-          <s.ReserveButton>Reserve</s.ReserveButton>
+          <s.ReserveButton onClick={this.reserveFunc}>Reserve</s.ReserveButton>
           <s.ChargeCaption>You won't be charged yet</s.ChargeCaption>
           <s.CostBreakdown>
             <s.PerNightCaption>{this.state.pricePerNight} x 1 night</s.PerNightCaption>
