@@ -1,6 +1,9 @@
+var timeIn = [];
+var timeOut = [];
 
 function ToggleAction(){
-    window.onload=function(){
+        timeIn = 'inside the funcwunc'
+    // window.onload=function(){
         const selected = document.querySelector(".selected");
         const optionsContainer = document.querySelector(".options-container");
       
@@ -15,8 +18,7 @@ function ToggleAction(){
           o.addEventListener("click", () => {
             console.log('An option in Checkin Time was selected')
             selected.innerHTML = o.querySelector("label").innerHTML;
-            console.log(selected.innerHTML);
-            const TimeIn = selected.innerHTML;
+            timeIn = selected.innerHTML;
             optionsContainer.classList.remove("active");
           });
         });
@@ -35,12 +37,13 @@ function ToggleAction(){
           e.addEventListener("click", () => {
             console.log('An option in Checkout Time was selected');
             selectedq.innerHTML = e.querySelector("label").innerHTML;
-            console.log(selectedq.innerHTML);
-            const TimeOut = selectedq.innerHTML;
+            timeOut = selectedq.innerHTML;
             optionsContainerq.classList.remove("active");
           });
         });    
-    }
+    // }
 }
 
-export default ToggleAction; 
+
+
+export {ToggleAction, timeIn, timeOut}; 
