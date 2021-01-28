@@ -26,7 +26,6 @@ class App extends React.Component{
   componentDidMount(){
     ToggleAction();
     this.fetchSpace();
-    console.log(this.state.timeIn)
   }
 
   fetchSpace = () => {
