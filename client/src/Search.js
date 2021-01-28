@@ -1,5 +1,4 @@
 import React, {useState} from 'react';
-// import './Search.css';
 import {DateRange} from 'react-date-range';
 
 import 'react-date-range/dist/styles.css'; // main css file
