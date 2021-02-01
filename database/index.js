@@ -26,4 +26,4 @@ const reservationSchema = new mongoose.Schema(
 
 const reservations = mongoose.model('reservationEntries', reservationSchema);
 
-export default reservation;
+export default reservations;
