@@ -37,7 +37,7 @@ class App extends React.Component{
           pricePerNight: res.pricePerNight, 
           cleaningFee: res.cleaningFee, 
           covidSurcharge: res.covidSurcharge,
-          occupTaxNFee: 19+Number(Math.round(res.pricePerNight+'e2')+'e-2')
+          occupTaxNFee: 19+Number(Math.round(res.pricePerNight*0.0825))
         })
         console.log('Data received');
         // console.log(this.state);
