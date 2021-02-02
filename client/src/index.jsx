@@ -76,7 +76,6 @@ class App extends React.Component{
     return (
         <s.Grid>
           <s.PricePerNight>${this.state.pricePerNight} / night</s.PricePerNight>
-          <s.Rating>Ratings</s.Rating>
           <s.CheckInContainer>
             <s.CheckInDate><Search/></s.CheckInDate>
             <s.TimeIn><TimeIn/></s.TimeIn>
