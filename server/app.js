@@ -41,4 +41,28 @@ app.get('/api/reservation', (req, res) => {
   })
 })
 
+app.post('/api/reservation', (req,res) => {
+  MongoClient.connect(url, function(err, client) {
+    const db = client.db(dbName);
+    const reservationCollection = db.collection("reservationEntries");
+    reservationCollection.insertOne({
+      locations: req.body.locations,
+      pricePerNight: req.body.pricePerNight,
+      cleaningFee: req.body.cleaningFee,
+      covidSurcharge: req.body.covidSurcharge,
+      occupTaxNFee: req.body.occupTaxNFee,
+      timeInSel: req.body.timeInSel,
+      timeOutSel: req.body.timeOutSel
+    })
+      .then((result) => {
+        res.send(result)
+        console.log(result)
+      })
+      .catch((err) => {
+        console.log(err)
+      })
+    client.close()
+  })
+})
+
 module.exports = app;

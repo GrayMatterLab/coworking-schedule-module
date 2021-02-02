@@ -37,13 +37,31 @@ class App extends React.Component{
           pricePerNight: res.pricePerNight, 
           cleaningFee: res.cleaningFee, 
           covidSurcharge: res.covidSurcharge,
-          occupTaxNFee: 19+Number(Math.round(res.pricePerNight+'e2')+'e-2')
+          occupTaxNFee: 19+Number(Math.round(res.pricePerNight*0.0825))
         })
         console.log('Data received');
         // console.log(this.state);
       })
+      .catch((err) => {
+        console.log('Error with data in fetchSpace()' + err);
+      })
+  }
+
+  reserveSpace = () => {
+    axios.post('/api/reservation', {
+      locations: this.state.locations,
+      pricePerNight: this.state.pricePerNight,
+      cleaningFee: this.state.cleaningFee,
+      covidSurcharge: this.state.covidSurcharge,
+      occupTaxNFee: this.state.occupTaxNFee,
+      timeInSel: this.state.timeInSel,
+      timeOutSel: this.state.timeOutSel 
+    })
+      .then((response) => {
+        console.log(response)
+      })
       .catch(() => {
-        console.log('Error with data in fetchSpace()');
+        console.log('Error with data posting to db')
       })
   }
 
@@ -51,13 +69,13 @@ class App extends React.Component{
     this.setState({timeInSel: timeIn, timeOutSel: timeOut});
     console.log(timeIn, timeOut);
     console.log(this.state);
+    this.reserveSpace();
   }
 
   render(){
     return (
         <s.Grid>
           <s.PricePerNight>${this.state.pricePerNight} / night</s.PricePerNight>
-          <s.Rating>Ratings</s.Rating>
           <s.CheckInContainer>
             <s.CheckInDate><Search/></s.CheckInDate>
             <s.TimeIn><TimeIn/></s.TimeIn>

@@ -2,8 +2,6 @@ var timeIn = [];
 var timeOut = [];
 
 function ToggleAction(){
-        timeIn = 'inside the funcwunc'
-    // window.onload=function(){
         const selected = document.querySelector(".selected");
         const optionsContainer = document.querySelector(".options-container");
       

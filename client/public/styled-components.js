@@ -19,15 +19,8 @@ export const PricePerNight = styled.section`
   grid-row-end: 3;
   font-family: "Airbnb Cereal App";
   text-align: left;
-  padding: 10px 0;
-`;
-
-export const Rating = styled.section`
-  grid-column-start: 3;
-  grid-column-end: 4;
-  grid-row-start: 2;
-  grid-row-end: 3;
-  font-family: "Airbnb Cereal App";
+  padding: 2px 10px;
+  font-size: 20px;
 `;
 
 export const CheckInContainer = styled.section`
