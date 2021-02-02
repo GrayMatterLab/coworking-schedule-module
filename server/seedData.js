@@ -21,7 +21,7 @@ MongoClient.connect(url, function (err, client) {
   //make a bunch of fake reservations
   let bunchOfReservations = [];
 
-  for (let i = 0; i < 100; i++) {
+  for (let i = 0; i < 1; i++) {
 
     const addressBuild = faker.fake("{{address.streetAddress}}, {{address.city}}, {{address.state}}, {{address.zipCode}}");
     const pricePerNight = faker.random.number({'min': 85, 'max': 154});
