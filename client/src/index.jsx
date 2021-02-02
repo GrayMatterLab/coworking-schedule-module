@@ -42,8 +42,26 @@ class App extends React.Component{
         console.log('Data received');
         // console.log(this.state);
       })
+      .catch((err) => {
+        console.log('Error with data in fetchSpace()' + err);
+      })
+  }
+
+  reserveSpace = () => {
+    axios.post('/api/reservation', {
+      locations: this.state.locations,
+      pricePerNight: this.state.pricePerNight,
+      cleaningFee: this.state.cleaningFee,
+      covidSurcharge: this.state.covidSurcharge,
+      occupTaxNFee: this.state.occupTaxNFee,
+      timeInSel: this.state.timeInSel,
+      timeOutSel: this.state.timeOutSel 
+    })
+      .then((response) => {
+        console.log(response)
+      })
       .catch(() => {
-        console.log('Error with data in fetchSpace()');
+        console.log('Error with data posting to db')
       })
   }
 
@@ -51,6 +69,7 @@ class App extends React.Component{
     this.setState({timeInSel: timeIn, timeOutSel: timeOut});
     console.log(timeIn, timeOut);
     console.log(this.state);
+    this.reserveSpace();
   }
 
   render(){
