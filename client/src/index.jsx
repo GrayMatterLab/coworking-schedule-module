@@ -12,11 +12,11 @@ class App extends React.Component{
     super(props);
 
     this.state = {
-      locations: [],
-      pricePerNight: [],
-      cleaningFee: [],
-      covidSurcharge: [],
-      occupTaxNFee: [],
+      locations: null,
+      pricePerNight: null,
+      cleaningFee: null,
+      covidSurcharge: null,
+      occupTaxNFee: null,
       timeInSel: null,
       timeOutSel: null
     };
