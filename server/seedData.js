@@ -7,7 +7,7 @@ const _ = require("lodash");
 const url = "mongodb://localhost:27017";
 
 //Database Name
-const dbName = "reservation";
+const dbName = "location";
 
 //Use connect method to connect to the server
 MongoClient.connect(url, function (err, client) {
@@ -16,10 +16,10 @@ MongoClient.connect(url, function (err, client) {
   const db = client.db(dbName);
 
   //get access to the relevant collections
-  const reservationCollection = db.collection("reservationEntries");
+  const locationCollection = db.collection("locationEntries");
 
-  //make a bunch of fake reservations
-  let bunchOfReservations = [];
+  //make a bunch of fake locations
+  let bunchOfLocation = [];
 
   for (let i = 0; i < 1; i++) {
 
@@ -28,15 +28,15 @@ MongoClient.connect(url, function (err, client) {
     const cleaningFee = 99;
     const covidSurcharge = 29;
 
-    const newReservation = {
+    const newLocation = {
       location: addressBuild,
       pricePerNight: pricePerNight,
       cleaningFee: cleaningFee,
       covidSurcharge: covidSurcharge
     }
-    bunchOfReservations.push(newReservation);
+    bunchOfLocation.push(newLocation);
   }
-  reservationCollection.insertMany(bunchOfReservations)
+  locationCollection.insertMany(bunchOfLocation)
   console.log("Database generated bunch of fake data!");
   client.close();
 })
