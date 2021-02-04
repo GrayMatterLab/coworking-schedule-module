@@ -9,7 +9,7 @@ app.use(bodyParser.json());
 //Mongo connection
 const MongoClient = require("mongodb").MongoClient;
 const url = "mongodb://localhost:27017";
-const dbName = "reservation";
+const dbName = "location";
 
 //Test API GET request
 app.get('/', (req, res) => {
@@ -22,12 +22,12 @@ app.post('/', (req, res) => {
 })
 
 // This request retrieves all the data from the database
-app.get('/api/reservation', (req, res) => {
+app.get('/api/locations', (req, res) => {
   MongoClient.connect(url, function (err, client) {
     const db = client.db(dbName);
-    const reservationCollection = db.collection("reservationEntries");
+    const locationCollection = db.collection("locationEntries");
 
-    reservationCollection.find({}).toArray()
+    locationCollection.find({}).toArray()
       .then((result) => {
         res.send(result)
         console.log(result)
