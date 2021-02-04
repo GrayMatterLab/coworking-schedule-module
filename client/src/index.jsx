@@ -12,6 +12,7 @@ class App extends React.Component{
     super(props);
 
     this.state = {
+      id: null,
       locations: null,
       pricePerNight: null,
       cleaningFee: null,
@@ -68,10 +69,11 @@ class App extends React.Component{
   }
 
   fetchSpace = () => {
-    axios.get('/api/reservation')
+    axios.get('/api/locations')
       .then((response) => {
         const res = response.data[0]
         this.setState({
+          id: res._id,
           locations: res.location, 
           pricePerNight: res.pricePerNight, 
           cleaningFee: res.cleaningFee, 
@@ -79,6 +81,7 @@ class App extends React.Component{
           occupTaxNFee: 19+Number(Math.round(res.pricePerNight*0.0825))
         })
         console.log('Data received');
+        console.log(this.state);
       })
       .catch((err) => {
         console.log('Error with data in fetchSpace()' + err);

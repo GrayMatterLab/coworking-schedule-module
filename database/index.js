@@ -12,11 +12,13 @@ db.once('open', function () {
 //Schema
 import mongoose from 'mongoose';
 
-const reservationSchema = new mongoose.Schema(
+const locationSchema = new mongoose.Schema(
   {
+    _id: {type: Number, required: true},
     location: { type: String, required: true },
     pricePerHour: { type: Number, required: true },
-    reserveDate: { type: Date, required: true },
+    checkInDate: { type: Date, required: true },
+    checkOutDate: { type: Date, required: true },
     checkInTime: { startTime: Date, required: true },
     checkOutTime: { endtime: Date, required: true },
     numberOfGuests: { type: Number, required: true },
@@ -24,6 +26,6 @@ const reservationSchema = new mongoose.Schema(
   }
 )
 
-const reservations = mongoose.model('reservationEntries', reservationSchema);
+const location = mongoose.model('locationEntries', locationSchema);
 
-export default reservation;
+export default location;
