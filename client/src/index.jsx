@@ -5,7 +5,6 @@ import axios from 'axios';
 import Search from './Search.js';
 import TimeIn from './TimeIn.js';
 import TimeOut from './TimeOut.js';
-import {ToggleAction, timeIn, timeOut} from './ToggleAction.js';
 
 class App extends React.Component{
 
@@ -18,14 +17,54 @@ class App extends React.Component{
       cleaningFee: [],
       covidSurcharge: [],
       occupTaxNFee: [],
-      timeInSel: timeIn,
-      timeOutSel: timeOut
+      timeInSel: null,
+      timeOutSel: null
     };
   }
 
   componentDidMount(){
-    ToggleAction();
     this.fetchSpace();
+    this.toggleAction();
+  }
+
+  toggleAction = () => {
+    const selected = document.querySelector(".selected");
+    const optionsContainer = document.querySelector(".options-container");
+  
+    const optionsList = document.querySelectorAll(".option");
+  
+    selected.addEventListener("click", () => {
+      optionsContainer.classList.toggle("active");
+      console.log('Time In Box Selected')
+    });
+  
+    optionsList.forEach(o => {
+      o.addEventListener("click", () => {
+        console.log('An option in Checkin Time was selected')
+        selected.innerHTML = o.querySelector("label").innerHTML;
+        this.setState({timeInSel: selected.innerHTML})
+        optionsContainer.classList.remove("active");
+      });
+    });
+  
+    const selectedq = document.querySelector(".selectedq");
+    const optionsContainerq = document.querySelector(".options-containerq");
+  
+    const optionsListq = document.querySelectorAll(".optionq");
+  
+    selectedq.addEventListener("click", () => {
+      optionsContainerq.classList.toggle("active");
+      console.log('Time Out Box Selected')
+    });
+  
+    optionsListq.forEach(e => {
+      e.addEventListener("click", () => {
+        console.log('An option in Checkout Time was selected');
+        selectedq.innerHTML = e.querySelector("label").innerHTML;
+        this.setState({timeOutSel: selectedq.innerHTML});
+        optionsContainerq.classList.remove("active");
+      });
+    });    
   }
 
   fetchSpace = () => {
@@ -40,7 +79,6 @@ class App extends React.Component{
           occupTaxNFee: 19+Number(Math.round(res.pricePerNight*0.0825))
         })
         console.log('Data received');
-        // console.log(this.state);
       })
       .catch((err) => {
         console.log('Error with data in fetchSpace()' + err);
@@ -57,19 +95,9 @@ class App extends React.Component{
       timeInSel: this.state.timeInSel,
       timeOutSel: this.state.timeOutSel 
     })
-      .then((response) => {
-        console.log(response)
-      })
       .catch(() => {
         console.log('Error with data posting to db')
       })
-  }
-
-  reserveFunc = () => {
-    this.setState({timeInSel: timeIn, timeOutSel: timeOut});
-    console.log(timeIn, timeOut);
-    console.log(this.state);
-    this.reserveSpace();
   }
 
   render(){
@@ -81,7 +109,7 @@ class App extends React.Component{
             <s.TimeIn><TimeIn/></s.TimeIn>
             <s.TimeOut><TimeOut/></s.TimeOut>
           </s.CheckInContainer>
-          <s.ReserveButton onClick={this.reserveFunc}>Reserve</s.ReserveButton>
+          <s.ReserveButton onClick={this.reserveSpace}>Reserve</s.ReserveButton>
           <s.ChargeCaption>You won't be charged yet</s.ChargeCaption>
           <s.CostBreakdown>
             <s.PerNightCaption>{this.state.pricePerNight} x 1 night</s.PerNightCaption>

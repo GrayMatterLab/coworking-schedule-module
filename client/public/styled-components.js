@@ -60,7 +60,7 @@ export const TimeOut = styled.section`
   padding: 2px;
 `;
 
-export const ReserveButton = styled.button`
+export const ReserveButton = styled.section`
   grid-column-start: 2;
   grid-column-end: 4;
   grid-row-start: 6;
