@@ -115,7 +115,8 @@ class App extends React.Component{
       occupTaxNFee: this.state.occupTaxNFee,
       timeInSel: this.state.timeInSel,
       timeOutSel: this.state.timeOutSel,
-      selectionRange: this.state.selectionRange
+      reserveStartDate: this.state.selectionRange.startDate,
+      reserveEndDate: this.state.selectionRange.endDate
     })
     .catch(() => {
         console.log('Error with data posting to db')
