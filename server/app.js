@@ -52,7 +52,9 @@ app.post('/api/reservation', (req,res) => {
       covidSurcharge: req.body.covidSurcharge,
       occupTaxNFee: req.body.occupTaxNFee,
       timeInSel: req.body.timeInSel,
-      timeOutSel: req.body.timeOutSel
+      timeOutSel: req.body.timeOutSel,
+      reserveStartDate: req.body.reserveStartDate,
+      reserveEndDate: req.body.reserveEndDate
     })
       .then((result) => {
         res.send(result)

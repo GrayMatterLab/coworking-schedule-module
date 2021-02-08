@@ -2,9 +2,11 @@ import React, {useState} from 'react';
 import ReactDOM from 'react-dom';
 import * as s from '../public/styled-components.js';
 import axios from 'axios';
-import Search from './Search.js';
 import TimeIn from './TimeIn.js';
 import TimeOut from './TimeOut.js';
+import {DateRange} from 'react-date-range';
+import 'react-date-range/dist/styles.css'; // main css file
+import 'react-date-range/dist/theme/default.css'; // theme css file
 
 class App extends React.Component{
 
@@ -19,13 +21,29 @@ class App extends React.Component{
       covidSurcharge: null,
       occupTaxNFee: null,
       timeInSel: null,
-      timeOutSel: null
+      timeOutSel: null,
+      selectionRange : {
+        startDate: new Date(),
+        endDate: new Date(),
+        key: "selection"
+      }
     };
   }
 
   componentDidMount(){
+    console.log(this.state.selectionRange)
     this.fetchSpace();
     this.toggleAction();
+  }
+
+  handleSelect=(ranges)=> {
+    this.setState({
+      selectionRange : {
+        startDate: ranges.selection.startDate,
+        endDate: ranges.selection.endDate,
+        key: "selection"
+      }
+    })
   }
 
   toggleAction = () => {
@@ -96,11 +114,13 @@ class App extends React.Component{
       covidSurcharge: this.state.covidSurcharge,
       occupTaxNFee: this.state.occupTaxNFee,
       timeInSel: this.state.timeInSel,
-      timeOutSel: this.state.timeOutSel 
+      timeOutSel: this.state.timeOutSel,
+      reserveStartDate: this.state.selectionRange.startDate,
+      reserveEndDate: this.state.selectionRange.endDate
     })
-      .catch(() => {
+    .catch(() => {
         console.log('Error with data posting to db')
-      })
+    })
   }
 
   render(){
@@ -108,7 +128,11 @@ class App extends React.Component{
         <s.Grid>
           <s.PricePerNight>${this.state.pricePerNight} / night</s.PricePerNight>
           <s.CheckInContainer>
-            <s.CheckInDate><Search/></s.CheckInDate>
+            <s.CheckInDate>
+              {/* <Search/> */}
+              <DateRange ranges={[this.state.selectionRange]} onChange={this.handleSelect} />
+
+            </s.CheckInDate>
             <s.TimeIn><TimeIn/></s.TimeIn>
             <s.TimeOut><TimeOut/></s.TimeOut>
           </s.CheckInContainer>
