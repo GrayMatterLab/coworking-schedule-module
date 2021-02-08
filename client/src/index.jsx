@@ -44,9 +44,8 @@ class App extends React.Component{
         key: "selection"
       }
     })
-  
-    console.log(this.state.selectionRange);
   }
+
   toggleAction = () => {
     const selected = document.querySelector(".selected");
     const optionsContainer = document.querySelector(".options-container");
