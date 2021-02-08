@@ -2,44 +2,11 @@ import React, {useState} from 'react';
 import ReactDOM from 'react-dom';
 import * as s from '../public/styled-components.js';
 import axios from 'axios';
-// import Search from './Search.js';
 import TimeIn from './TimeIn.js';
 import TimeOut from './TimeOut.js';
 import {DateRange} from 'react-date-range';
 import 'react-date-range/dist/styles.css'; // main css file
 import 'react-date-range/dist/theme/default.css'; // theme css file
-
-
-// class Search extends React.Component {
-//   constructor(props) {
-//     super(props)
-//     this.state = {
-//       selectionRange : {
-//         startDate: new Date(),
-//         endDate: new Date(),
-//         key: "selection"
-//       }
-//     } 
-//   }
-
-//   handleSelect=(ranges)=> {
-//     this.setState({
-//       selectionRange : {
-//         startDate: ranges.selection.startDate,
-//         endDate: ranges.selection.endDate,
-//         key: "selection"
-//       }
-//     })
-  
-//     console.log(this.state);
-//   }
-//   render() {
-    
-//     return (
-//       <DateRange ranges={[this.state.selectionRange]} onChange={this.handleSelect} />
-//     );
-//   }
-// }
 
 class App extends React.Component{
 
