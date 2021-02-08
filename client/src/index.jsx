@@ -148,7 +148,8 @@ class App extends React.Component{
       covidSurcharge: this.state.covidSurcharge,
       occupTaxNFee: this.state.occupTaxNFee,
       timeInSel: this.state.timeInSel,
-      timeOutSel: this.state.timeOutSel 
+      timeOutSel: this.state.timeOutSel,
+      selectionRange: this.state.selectionRange
     })
     .catch(() => {
         console.log('Error with data posting to db')
