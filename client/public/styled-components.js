@@ -41,6 +41,7 @@ export const CheckInDate = styled.section`
   grid-row-end: 1;
   text-align: center;
   padding: 5px;
+  position: relative;
 `;
 
 
@@ -50,6 +51,8 @@ export const TimeIn = styled.section`
   grid-row-start: 4;
   grid-row-end: 4;
   padding: 2px;
+  position: relative;
+
 `;
 
 export const TimeOut = styled.section`
@@ -58,6 +61,8 @@ export const TimeOut = styled.section`
   grid-row-start: 4;
   grid-row-end: 4;
   padding: 2px;
+  position: relative;
+
 `;
 
 export const ReserveButton = styled.section`

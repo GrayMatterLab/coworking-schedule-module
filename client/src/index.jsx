@@ -129,9 +129,7 @@ class App extends React.Component{
           <s.PricePerNight>${this.state.pricePerNight} / night</s.PricePerNight>
           <s.CheckInContainer>
             <s.CheckInDate>
-              {/* <Search/> */}
-              <DateRange ranges={[this.state.selectionRange]} onChange={this.handleSelect} />
-
+              <DateRange fixedHeight ranges={[this.state.selectionRange]} onChange={this.handleSelect} />
             </s.CheckInDate>
             <s.TimeIn><TimeIn/></s.TimeIn>
             <s.TimeOut><TimeOut/></s.TimeOut>
