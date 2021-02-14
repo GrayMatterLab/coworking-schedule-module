@@ -22,7 +22,7 @@ class App extends React.Component{
       occupTaxNFee: null,
       timeInSel: null,
       timeOutSel: null,
-      days: 0,
+      days: 1,
       selectionRange : {
         startDate: new Date(),
         endDate: new Date(),
@@ -149,7 +149,7 @@ class App extends React.Component{
           <s.ReserveButton onClick={this.reserveSpace}>Reserve</s.ReserveButton>
           <s.ChargeCaption>You won't be charged yet</s.ChargeCaption>
           <s.CostBreakdown>
-            <s.PerNightCaption>{this.state.pricePerNight} x 1 day</s.PerNightCaption>
+            <s.PerNightCaption>{this.state.pricePerNight} x {this.state.days} day</s.PerNightCaption>
             <s.PerNightQuote>${this.state.pricePerNight}</s.PerNightQuote>
             <s.CleaningFeeCaption>Cleaning fee</s.CleaningFeeCaption>
             <s.CleaningFeeQuote>${this.state.covidSurcharge}</s.CleaningFeeQuote>
