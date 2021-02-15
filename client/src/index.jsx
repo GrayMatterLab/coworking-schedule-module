@@ -22,6 +22,7 @@ class App extends React.Component{
       occupTaxNFee: null,
       timeInSel: null,
       timeOutSel: null,
+      days: 1,
       selectionRange : {
         startDate: new Date(),
         endDate: new Date(),
@@ -37,13 +38,23 @@ class App extends React.Component{
   }
 
   handleSelect=(ranges)=> {
-    this.setState({
+    this.setState(({
       selectionRange : {
         startDate: ranges.selection.startDate,
         endDate: ranges.selection.endDate,
         key: "selection"
       }
-    })
+    }),
+    () => {this.daysLeft()})
+  }
+
+  daysLeft = () => {
+    var d1 = this.state.selectionRange.startDate; //"now"
+    var d2 = this.state.selectionRange.endDate; // some date
+    var diff = Math.abs(d2-d1);
+    var oneDay=1000*60*60*24;
+    var totalDays = (diff/oneDay)+1;
+    this.setState({days: totalDays});
   }
 
   toggleAction = () => {
@@ -126,10 +137,10 @@ class App extends React.Component{
   render(){
     return (
         <s.Grid>
-          <s.PricePerNight>${this.state.pricePerNight} / night</s.PricePerNight>
+          <s.PricePerNight>${this.state.pricePerNight} / day</s.PricePerNight>
           <s.CheckInContainer>
             <s.CheckInDate>
-              <DateRange fixedHeight ranges={[this.state.selectionRange]} onChange={this.handleSelect} />
+              <DateRange fixedHeight ranges={[this.state.selectionRange]} onChange={this.handleSelect}/>
             </s.CheckInDate>
             <s.TimeIn><TimeIn/></s.TimeIn>
             <s.TimeOut><TimeOut/></s.TimeOut>
@@ -137,8 +148,8 @@ class App extends React.Component{
           <s.ReserveButton onClick={this.reserveSpace}>Reserve</s.ReserveButton>
           <s.ChargeCaption>You won't be charged yet</s.ChargeCaption>
           <s.CostBreakdown>
-            <s.PerNightCaption>{this.state.pricePerNight} x 1 night</s.PerNightCaption>
-            <s.PerNightQuote>${this.state.pricePerNight}</s.PerNightQuote>
+            <s.PerNightCaption>{this.state.pricePerNight} / {this.state.days} day</s.PerNightCaption>
+            <s.PerNightQuote>${this.state.pricePerNight*this.state.days}</s.PerNightQuote>
             <s.CleaningFeeCaption>Cleaning fee</s.CleaningFeeCaption>
             <s.CleaningFeeQuote>${this.state.covidSurcharge}</s.CleaningFeeQuote>
             <s.OccupancyTaxCaption>Occupancy fee and taxes</s.OccupancyTaxCaption>
@@ -146,7 +157,7 @@ class App extends React.Component{
             <s.AdditionalFees>NYC COVID Surcharge</s.AdditionalFees>
             <s.AdditionalFeesQuote>${this.state.covidSurcharge}</s.AdditionalFeesQuote>
             <s.Total>Total</s.Total>
-            <s.TotalQuote>${this.state.pricePerNight + this.state.cleaningFee + this.state.occupTaxNFee + this.state.covidSurcharge}</s.TotalQuote>
+            <s.TotalQuote>${(this.state.pricePerNight*this.state.days) + this.state.cleaningFee + this.state.occupTaxNFee + this.state.covidSurcharge}</s.TotalQuote>
           </s.CostBreakdown>
         </s.Grid >
       )
