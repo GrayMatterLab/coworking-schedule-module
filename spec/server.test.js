@@ -10,7 +10,7 @@ describe('Jest', () => {
     });
 });
 
-describe("Testing Express Server Routes", () => {
+describe("Testing Express Server Status Codes are 200", () => {
     it("GET request to '/' endpoint", async done => {
         const response = await request.get("/");
         expect(response.status).toBe(200);
@@ -20,7 +20,6 @@ describe("Testing Express Server Routes", () => {
     it("POST request to '/' endpoint", async done => {
         const response = await request.post("/");
         expect(response.status).toBe(200);
-        expect(response.body.message).toBe('Received successful POST test request!')
         done();
     });
 
