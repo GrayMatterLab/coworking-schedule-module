@@ -7,7 +7,8 @@
     "node": ">=6.13.0"
   },
   "scripts": {
-    "test": "jest --detectOpenHandles",
+    "test": "jest",
+    "test:watch": "jest --watch",
     "start": "node ./server/index.js",
     "build": "webpack --watch",
     "seed": "node server/seedData.js"
