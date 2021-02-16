@@ -32,12 +32,9 @@ app.get('/api/locations', (req, res) => {
     locationCollection.find({}).toArray()
       .then((result) => {
         res.send(result)
-        console.log(result)
-        // client.close()
       })
       .catch((err) => {
         console.log(err)
-        // client.close()
       })
     client.close()
   })
@@ -61,7 +58,6 @@ app.post('/api/reservation', (req,res) => {
       .then((result) => {
         res.send(result)
         res.status(200)
-        console.log(result)
       })
       .catch((err) => {
         console.log(err)
