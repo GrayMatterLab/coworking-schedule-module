@@ -32,7 +32,6 @@ class App extends React.Component{
   }
 
   componentDidMount(){
-    console.log(this.state.selectionRange)
     this.fetchSpace();
     this.toggleAction();
   }
@@ -65,12 +64,10 @@ class App extends React.Component{
   
     selected.addEventListener("click", () => {
       optionsContainer.classList.toggle("active");
-      console.log('Time In Box Selected')
     });
   
     optionsList.forEach(o => {
       o.addEventListener("click", () => {
-        console.log('An option in Checkin Time was selected')
         selected.innerHTML = o.querySelector("label").innerHTML;
         this.setState({timeInSel: selected.innerHTML})
         optionsContainer.classList.remove("active");
@@ -84,12 +81,10 @@ class App extends React.Component{
   
     selectedq.addEventListener("click", () => {
       optionsContainerq.classList.toggle("active");
-      console.log('Time Out Box Selected')
     });
   
     optionsListq.forEach(e => {
       e.addEventListener("click", () => {
-        console.log('An option in Checkout Time was selected');
         selectedq.innerHTML = e.querySelector("label").innerHTML;
         this.setState({timeOutSel: selectedq.innerHTML});
         optionsContainerq.classList.remove("active");
@@ -109,8 +104,6 @@ class App extends React.Component{
           covidSurcharge: res.covidSurcharge,
           occupTaxNFee: 19+Number(Math.round(res.pricePerNight*0.0825))
         })
-        console.log('Data received');
-        console.log(this.state);
       })
       .catch((err) => {
         console.log('Error with data in fetchSpace()' + err);
@@ -129,7 +122,7 @@ class App extends React.Component{
       reserveStartDate: this.state.selectionRange.startDate,
       reserveEndDate: this.state.selectionRange.endDate
     })
-    .catch(() => {
+    .catch((err) => {
         console.log('Error with data posting to db')
     })
   }
