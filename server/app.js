@@ -11,12 +11,6 @@ const MongoClient = require("mongodb").MongoClient;
 const url = "mongodb://localhost:27017";
 const dbName = "location";
 
-//Test API GET request
-app.get('/', async (req, res) => {
-  res.status(200)
-  res.send('Received successful POST test request!')
-})
-
 //Test API POST request
 app.post('/', async (req, res) => {
   res.status(200)
