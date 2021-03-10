@@ -7,6 +7,7 @@ import TimeOut from './TimeOut.js';
 import {DateRange} from 'react-date-range';
 import 'react-date-range/dist/styles.css'; // main css file
 import 'react-date-range/dist/theme/default.css'; // theme css file
+import '../public/style.css';
 
 class App extends React.Component{
 
@@ -157,4 +158,4 @@ class App extends React.Component{
   }
 }
 
-ReactDOM.render(<App />, document.getElementById('app'));
+ReactDOM.render(<App />, document.getElementById('schedule-booking'));
