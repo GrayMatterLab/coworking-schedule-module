@@ -8,11 +8,14 @@ export const Grid = styled.section`
   box-shadow: 0px 10px 25px 4px #dedede;
   border-radius: 13px;
   display: grid;
-  margin: auto;
-  margin-top: 50px;
+  margin-top: -40px;
+  margin-right: -20px;
+  background: white;
+  transform: scale(0.83);
+  position: -webkit-sticky;
 `;
 
-export const PricePerNight = styled.section`
+export const PricePerNight = styled.section` 
   grid-column-start: 2;
   grid-column-end: 3;
   grid-row-start: 2;
@@ -20,7 +23,7 @@ export const PricePerNight = styled.section`
   font-family: "Airbnb Cereal App";
   text-align: left;
   padding: 2px 10px;
-  font-size: 20px;
+  font-size: 16px;
 `;
 
 export const CheckInContainer = styled.section`
@@ -81,6 +84,7 @@ export const ReserveButton = styled.section`
   &:hover{
     background: #4f8c8c;
   }
+  cursor: pointer;
 `;
 
 export const ChargeCaption = styled.section`
@@ -102,6 +106,7 @@ export const CostBreakdown = styled.section`
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
   display: grid;
+  font-size: 20px;
 `;
 
 export const PerNightCaption = styled.section`
