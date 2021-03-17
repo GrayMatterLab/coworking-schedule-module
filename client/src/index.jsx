@@ -4,9 +4,8 @@ import * as s from '../public/styled-components.js';
 import axios from 'axios';
 import TimeIn from './TimeIn.js';
 import TimeOut from './TimeOut.js';
-import {DateRange} from 'react-date-range';
-import 'react-date-range/dist/styles.css'; // main css file
-import 'react-date-range/dist/theme/default.css'; // theme css file
+import '../public/calendar.css';
+import '../public/calendarTheme.css';
 import '../public/style.css';
 
 class App extends React.Component{
